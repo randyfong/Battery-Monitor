@@ -22,13 +22,13 @@ struct ContentView: View {
             }
             .foregroundColor(monitorBeaconsNow ?  .red : .accentColor)
             .padding()
-            Button("Make network call") {
+            Button("Make Network Call") {
                 Task {
                     try? await makeNetworkCall()
                 }
             }
             .padding()
-            Button("Bomb application") {
+            Button("Bomb Application") {
                 bombApplication()
             }
             .foregroundColor(.red)
