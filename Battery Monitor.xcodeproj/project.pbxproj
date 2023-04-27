@@ -14,6 +14,7 @@
 		C28BA8DE29FAE97600DF3B57 /* Battery_MonitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28BA8DD29FAE97600DF3B57 /* Battery_MonitorTests.swift */; };
 		C28BA8E829FAE97600DF3B57 /* Battery_MonitorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28BA8E729FAE97600DF3B57 /* Battery_MonitorUITests.swift */; };
 		C28BA8EA29FAE97600DF3B57 /* Battery_MonitorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28BA8E929FAE97600DF3B57 /* Battery_MonitorUITestsLaunchTests.swift */; };
+		C28BA8F929FAF0A900DF3B57 /* NewRelic in Frameworks */ = {isa = PBXBuildFile; productRef = C28BA8F829FAF0A900DF3B57 /* NewRelic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C28BA8F929FAF0A900DF3B57 /* NewRelic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,12 +139,16 @@
 				C28BA8C529FAE97100DF3B57 /* Sources */,
 				C28BA8C629FAE97100DF3B57 /* Frameworks */,
 				C28BA8C729FAE97100DF3B57 /* Resources */,
+				C28BA8F629FAEFE700DF3B57 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Battery Monitor";
+			packageProductDependencies = (
+				C28BA8F829FAF0A900DF3B57 /* NewRelic */,
+			);
 			productName = "Battery Monitor";
 			productReference = C28BA8C929FAE97100DF3B57 /* Battery Monitor.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +221,9 @@
 				Base,
 			);
 			mainGroup = C28BA8C029FAE97100DF3B57;
+			packageReferences = (
+				C28BA8F729FAF0A900DF3B57 /* XCRemoteSwiftPackageReference "newrelic-ios-agent-spm" */,
+			);
 			productRefGroup = C28BA8CA29FAE97100DF3B57 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -251,6 +260,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C28BA8F629FAEFE700DF3B57 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${BUILD_DIR%/Build/*}/SourcePackages/artifacts/newrelic-ios-agent-spm/NewRelic.xcframework/Resources/run-symbol-tool\" \"AA6f7e60e06d819fedead069b3b074dff5e71688e3-NRMA\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C28BA8C529FAE97100DF3B57 /* Sources */ = {
@@ -583,6 +612,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C28BA8F729FAF0A900DF3B57 /* XCRemoteSwiftPackageReference "newrelic-ios-agent-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/newrelic/newrelic-ios-agent-spm";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C28BA8F829FAF0A900DF3B57 /* NewRelic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C28BA8F729FAF0A900DF3B57 /* XCRemoteSwiftPackageReference "newrelic-ios-agent-spm" */;
+			productName = NewRelic;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C28BA8C129FAE97100DF3B57 /* Project object */;
 }
