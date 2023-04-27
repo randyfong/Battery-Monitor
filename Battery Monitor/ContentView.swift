@@ -53,13 +53,13 @@ struct ContentView: View {
         }
     
     func makeNetworkCall() async throws {
-        print("makeNetworkCall (Call Yahoo)")
+        print("** Make Network Call (Call Yahoo)")
         let url = URL(string: "https://yahoo.com")!
         let (_, _) = try await URLSession.shared.data(from: url)
     }
     
     func bombApplication() {
-        print("(Bomb Application (Bad))")
+        print("** Bomb Application")
         let zero: Int = Int.random(in: 0...1)
         let _: Int = 5 / zero
     }
